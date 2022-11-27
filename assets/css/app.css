@@ -69,6 +69,7 @@ div.wrapper {
   margin-top: 3px;
   margin-left: 5px;
   max-height: 200px;
+  padding-top: 13px;
 }
 
 .list-item {
@@ -86,26 +87,9 @@ div.wrapper {
   display: inline-block;
   font-weight: 400;
   margin: 0 auto 0 0;
-  width: 205px;
+  width: 200px;
 }
 
-.list-item:first-child {
-  margin-top: 13px;
-}
-
-.list-item:last-child {
-  display: none;
-}
-
-#input > p {
-  padding: 0;
-  border-radius: 10px;
-}
-input {
-  margin: 0;
-  height: 36px;
-  width: 100%;
-}
 .remove {
   display: inline-block;
   height: 20px;
@@ -126,4 +110,8 @@ input {
   height: 42px;
   margin-top: 19px;
   margin-bottom: 19px;
+}
+
+.hidden {
+  display: none;
 }
