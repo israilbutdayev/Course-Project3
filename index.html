@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/app.css" />
+    <script src="./assets/js/app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="box">
+      <div class="flex-item up"></div>
+      <div class="flex-item header">To-do list</div>
+      <div class="flex-item sort">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          viewBox="0 0 25 15"
+          fill="none"
+        >
+          <rect x="2.5" y="1" width="2.5" height="14" fill="#C4C4C4" />
+          <rect x="10" y="1.75" width="7.5" height="2.5" fill="#C4C4C4" />
+          <rect x="10" y="6.75" width="10" height="2.5" fill="#C4C4C4" />
+          <rect x="10" y="11.75" width="15" height="2.5" fill="#C4C4C4" />
+          <polygon
+            class="arrow asc"
+            points="0.5,13 7,13 3.75,16.5"
+            fill="#C4C4C4"
+          />
+        </svg>
+      </div>
+      <div class="flex-item wrapper">
+        <div id="input" class="list-item">
+          <p>
+            Почистить зубы
+            <!-- <input type="text" value="Почистить зубы" /> -->
+          </p>
+          <div class="remove"></div>
+        </div>
+        <div class="list-item">
+          <p>Купить зубную пасту</p>
+          <div class="remove"></div>
+        </div>
+        <div class="list-item">
+          <p>Умыться</p>
+          <div class="remove"></div>
+        </div>
+        <div class="list-item">
+          <p>Выпить кофе</p>
+          <div class="remove"></div>
+        </div>
+        <div class="list-item">
+          <p>Принять душ</p>
+          <div class="remove"></div>
+        </div>
+        <div class="list-item">
+          <p></p>
+          <div class="remove"></div>
+        </div>
+      </div>
+      <img
+        id="add"
+        class="flex-item"
+        src="./assets/images/ad button.svg"
+        alt=""
+      />
+    </div>
+  </body>
+</html>
