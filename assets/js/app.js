@@ -15,7 +15,7 @@ document.querySelector("div.sort").addEventListener("click", (e) => {
     arrow.classList.remove("desc");
     arrow.classList.add("asc");
   }
-  let order = [...document.querySelectorAll(".list-item:not(.hidden)")]
+  let order = [...document.querySelectorAll(".item")]
     .sort((a, b) => {
       if (direction === "asc") {
         return (
@@ -45,7 +45,7 @@ document.querySelector("div.sort").addEventListener("click", (e) => {
 
 document.querySelector("#add").addEventListener("click", (e) => {
   let lastChild = document.querySelector(
-    "body > div.box > div.flex-item.wrapper > div:last-child"
+    "div.box > div.flex-item.wrapper > div:last-child"
   );
   let parent = lastChild.parentNode;
   let clone = lastChild.cloneNode(true);
@@ -57,6 +57,10 @@ document.querySelector("#add").addEventListener("click", (e) => {
     parent.children[0].querySelector("p").textContent = "";
     lastChild.parentNode.insertBefore(clone, lastChild);
     clone.id = "item" + c;
+    clone.classList.add("item");
+    if (parent.children[0].classList.contains("item")) {
+      parent.children[0].classList.remove("item");
+    }
     c++;
   }
   if (parent.children.length === 7) {
@@ -64,10 +68,16 @@ document.querySelector("#add").addEventListener("click", (e) => {
   }
 });
 
+document.querySelector("#item0").addEventListener("input", (e) => {
+  document.querySelector("#item0").classList.add("item");
+});
+
+document.querySelector("#item0 > div").addEventListener("click", () => {
+  document.querySelector("#item0 > p").textContent = "";
+});
+
 document
-  .querySelector(
-    "body > div.box > div.flex-item.wrapper > div:last-child > div"
-  )
+  .querySelector("div.box > div.flex-item.wrapper > div:last-child > div")
   .addEventListener("click", removeListener);
 
 function removeListener(e) {
