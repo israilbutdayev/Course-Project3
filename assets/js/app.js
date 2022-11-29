@@ -17,21 +17,12 @@ document.querySelector("div.sort").addEventListener("click", (e) => {
   }
   let order = [...document.querySelectorAll(".item")]
     .sort((a, b) => {
-      if (direction === "asc") {
-        return (
-          a
-            .querySelector("p")
-            .textContent.localeCompare(b.querySelector("p").textContent) ||
-          a.id.localeCompare(b.id)
-        );
-      } else {
-        return (
-          b
-            .querySelector("p")
-            .textContent.localeCompare(a.querySelector("p").textContent) ||
-          b.id.localeCompare(a.id)
-        );
-      }
+      let result =
+        a
+          .querySelector("p")
+          .textContent.localeCompare(b.querySelector("p").textContent) ||
+        a.id.localeCompare(b.id);
+      return result * (direction === "asc" ? 1 : -1);
     })
     .map((el) => el.id);
   for (let i = order.length - 1; i > 0; i--) {
@@ -42,7 +33,6 @@ document.querySelector("div.sort").addEventListener("click", (e) => {
     currentNode.parentNode.insertBefore(prevNode, currentNode);
   }
 });
-
 document.querySelector("#add").addEventListener("click", (e) => {
   let lastChild = document.querySelector(
     "div.box > div.flex-item.wrapper > div:last-child"
@@ -58,13 +48,12 @@ document.querySelector("#add").addEventListener("click", (e) => {
     lastChild.parentNode.insertBefore(clone, lastChild);
     clone.id = "item" + c;
     clone.classList.add("item");
-    if (parent.children[0].classList.contains("item")) {
-      parent.children[0].classList.remove("item");
-    }
+    parent.children[0].classList.toggle("item");
     c++;
   }
   if (parent.children.length === 7) {
     parent.children[0].classList.add("hidden");
+    parent.children[0].classList.remove("item");
   }
 });
 
