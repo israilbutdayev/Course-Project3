@@ -1,6 +1,9 @@
 let c = 1;
 let firstSort = true;
 document.querySelector("div.sort").addEventListener("click", (e) => {
+  if (document.querySelector("#item0 > p").textContent) {
+    document.querySelector("#add").click();
+  }
   let arrow = document.querySelector("polygon.arrow");
   let direction = "asc";
   if (arrow.classList.contains("asc")) {
@@ -58,7 +61,11 @@ document.querySelector("#add").addEventListener("click", (e) => {
 });
 
 document.querySelector("#item0").addEventListener("input", (e) => {
-  document.querySelector("#item0").classList.add("item");
+  if (e.target.textContent) {
+    document.querySelector("#item0").classList.add("item");
+  } else {
+    document.querySelector("#item0").classList.remove("item");
+  }
 });
 
 document.querySelector("#item0 > div").addEventListener("click", () => {
